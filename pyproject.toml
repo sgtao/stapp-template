@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "stpyapp-template"
+version = "0.1.0"
+description = "streamlit project template for quick start"
+authors = ["Shogo Ogami <sg.tao.so@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+streamlit = "^1.35.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
