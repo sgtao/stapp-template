@@ -12,7 +12,8 @@ poetry shell
 ### Start as local service
 ```sh
 # on poetry shell
-streamlit hello
+# streamlit hello
+streamlit run src/main.py
 # Local URL: http://localhost:8501
 ```
 
