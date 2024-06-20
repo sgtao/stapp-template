@@ -37,6 +37,21 @@ task lint
 task test
 ```
 
+### Test coverage
+
+#### show c1 coverage
+```sh
+# on poetry shell
+task test-cov
+```
+
+#### output HTML coverage report
+```sh
+# on poetry shell
+task test-repo
+```
+
+
 ## License
 Apache-2.0 license
 
