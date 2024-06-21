@@ -1,3 +1,7 @@
 import streamlit as st
 
-st.title("Hello World")
+"""
+# Welcome to Streamlit!
+
+Edit `/src` and `/tests` to customize this app to your heart's desire :heart:.
+"""
