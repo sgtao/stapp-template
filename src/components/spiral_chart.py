@@ -23,9 +23,7 @@ def spiral_chart(x, y, indices, num_points):
             y=alt.Y("y", axis=None),
             color=alt.Color("idx", legend=None, scale=alt.Scale()),
             size=alt.Size(
-                "rand",
-                legend=None,
-                scale=alt.Scale(range=[1, 150])
+                "rand", legend=None, scale=alt.Scale(range=[1, 150])
             ),
         )
     )
