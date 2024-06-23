@@ -4,10 +4,11 @@ import streamlit as st
 from functions.calculations import calculate_spiral
 from components.spiral_chart import spiral_chart
 
-# メインページに移動
-st.page_link("main.py", label="Go to Main", icon="🏠")
+# # メインページに移動
+# st.page_link("main.py", label="Go to Main", icon="🏠")
 
 st.title("Streamlit Example App")
+
 """
 In the meantime,
 below is an example of what you can do with just a few lines of code:
@@ -21,3 +22,4 @@ x, y, indices = calculate_spiral(num_points, num_turns)
 
 # plot chart
 spiral_chart(x, y, indices, num_points)
+

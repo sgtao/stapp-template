@@ -10,4 +10,5 @@ def test_show_title():
     """show title"""
     at = AppTest.from_file("src/pages/01_example_app.py")
     at.run(timeout=30)  # タイムアウトを30秒に設定
+    # print(f"at is {at}")
     assert at.title[0].value == "Streamlit Example App"
