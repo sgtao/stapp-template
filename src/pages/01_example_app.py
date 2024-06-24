@@ -22,4 +22,3 @@ x, y, indices = calculate_spiral(num_points, num_turns)
 
 # plot chart
 spiral_chart(x, y, indices, num_points)
-
