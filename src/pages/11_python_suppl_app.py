@@ -24,9 +24,9 @@ st.caption("これはサプーの動画用テストアプリです")
 動画URL: https://www.youtube.com/watch?v=4nsTce1Oce8
 """
 
-st.subheader("自己紹介")
+st.subheader("他者紹介")
 st.text(
-    "Python関連情報をYouTubeで発信しているPython VTuber サプーです\n"
+    "Python VTuber サプーさんは、Python関連情報をYouTubeで発信してます\n"
     "よければチャンネル登録よろしくお願いします！"
 )
 
@@ -39,7 +39,7 @@ st.code(code, language="python")
 
 
 # 画像
-st.subheader("画像（sgtao画像です）")
+st.subheader("画像")
 image = Image.open("assets/images/sample_image.png")
 st.image(image, width=200)
 
