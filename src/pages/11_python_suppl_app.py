@@ -72,6 +72,9 @@ with st.form(key="profile_form"):
     # スライダー
     height = st.slider("身長", min_value=110, max_value=210)
 
+    # カラーピッカー
+    color = st.color_picker("テーマカラー", "#4600F9")
+
     # ボタン
     submit_btn = st.form_submit_button("送信")
     cancel_btn = st.form_submit_button("キャンセル")
@@ -84,3 +87,4 @@ with st.form(key="profile_form"):
         st.text(f"趣味：{', '.join(hobby)}")
         st.text(f"身長：{height} cm")
         st.text(f"メールマガジン購読：{mail_subscribe}")
+        st.text(f"テーマカラー(コード)：{color}")
