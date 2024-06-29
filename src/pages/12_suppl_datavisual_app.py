@@ -11,7 +11,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../src"))
 # サイドバー
 with st.sidebar:
     url_input = "https://docs.streamlit.io/develop/api-reference/charts"
-    st.markdown(f"[st chart widet api]({url_input})")
+    st.markdown(f"[st Chart elements]({url_input})")
 
 
 # # メインページに移動
@@ -22,7 +22,7 @@ st.caption("これはサプーの動画用テストアプリです")
 
 """
 このアプリはサプー動画で紹介していたコードを実装してみたページです
-動画URL: https://www.youtube.com/watch?v=4nsTce1Oce8
+動画URL: https://www.youtube.com/watch?v=4nsTce1Oce8&t=1108s
 """
 
 
