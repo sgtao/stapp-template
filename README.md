@@ -14,6 +14,17 @@ poetry install
 poetry shell
 ```
 
+### コマンド一覧
+```sh
+$ task --list
+start      streamlit run src/main.py
+test       pytest tests
+test-cov   pytest tests --cov --cov-branch -svx
+test-repo  pytest tests --cov --cov-report=html
+format     black --line-length 79 src
+lint       flake8 src
+check-lint black整形とflake8チェックを実行
+```
 
 ### Start as local service
 ```sh
@@ -27,8 +38,9 @@ task start
 
 ### format and lint check
 ```sh
-task format
-task lint
+# task format
+# task lint
+task check-lint
 ```
 
 
