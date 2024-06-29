@@ -31,3 +31,4 @@ test-cov = "pytest tests --cov --cov-branch -svx"
 test-repo = "pytest tests --cov --cov-report=html"
 format = "black --line-length 79 src"
 lint = "flake8 src"
+check-lint = { cmd = "task format && task lint", help = "black整形とflake8チェックを実行" }
