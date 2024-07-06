@@ -66,6 +66,44 @@ task test-repo
 ```
 
 
+## 他プロジェクトでの利用手順例
+### 01. リポジトリURLの変更
+- `git-clone`したあと、`git-remote`でoriginを変更する
+```sh
+PROJECT_FOLDER="stapp-excel2csv"
+GITHUB_URL="https://github.com/sgtao/${PROJECT_FOLDER}.git"
+git clone https://github.com/sgtao/stpyapp-template.git $PROJECT_FOLDER
+cd  $PROJECT_FOLDER
+# git remote add origin $GITHUB_URL
+git remote set-url origin $GITHUB_URL
+git branch -M main
+git push -u origin main
+```
+
+### 02．`README.md`・`LICENSE`ファイルの変更
+- `README.md`の変更：
+  - タイトル、概要を変更する
+  - LICENSEを変更する場合は、`README.md`の下段の表記と`LICENSE`ファイルを変更する
+
+### 03．`src/pages`フォルダ配下にアプリケーション追加
+- 例）`src/pages/11_csv_viewer.py`を作成
+  - `task start`・`task check-format`などで確認
+```py
+import streamlit as st
+import pandas as pd
+
+
+def csv_viewer():
+    st.title("CSVファイルアップローダー")
+
+    ...
+
+# if __name__ == '__main__':
+#     csv_viewer()
+csv_viewer()
+```
+
+
 ## License
 Apache-2.0 license
 
