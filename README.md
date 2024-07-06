@@ -104,6 +104,20 @@ csv_viewer()
 ```
 
 
-## License
-Apache-2.0 license
+## 使用ライブラリ
 
+このプロジェクトは以下のオープンソースライブラリを使用しています：
+
+- [Streamlit](https://streamlit.io/) - Apache License 2.0
+
+  Copyright © 2019-2024 Streamlit Inc.
+
+  Streamlitは、データアプリケーションを簡単に作成するためのオープンソースライブラリです。
+
+## ライセンス
+MIT License
+
+このプロジェクトは MIT ライセンスの下で公開されています。詳細は [LICENSE](./LICENSE) ファイルをご覧ください。
+
+ただし、このプロジェクトは Apache License 2.0 でライセンスされている Streamlit を使用しています。
+Streamlit のライセンス全文は [こちら](https://github.com/streamlit/streamlit/blob/develop/LICENSE) でご確認いただけます。
