@@ -1,4 +1,4 @@
-# tests/test_main.py
+# tests/test_pages_example_app.py
 import sys
 import os
 from streamlit.testing.v1 import AppTest

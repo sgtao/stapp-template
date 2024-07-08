@@ -85,8 +85,23 @@ git push -u origin main
   - タイトル、概要を変更する
   - LICENSEを変更する場合は、`README.md`の下段の表記と`LICENSE`ファイルを変更する
 
-### 03．`src/pages`フォルダ配下にアプリケーション追加
-- 例）`src/pages/11_csv_viewer.py`を作成
+### 03．`src/pages`フォルダ配下のページ更新
+- 03-1．テンプレートのファイルを削除
+```sh
+rm src/pages/01_example_app.py
+rm src/components/spiral_chart.py src/functions/calculations.py
+rm tests/test_pages_example_app.py
+#
+# 必要に応じてパッケージも削除
+poetry remove altair
+poetry remove pandas
+#
+# `src/main.py`のリンク削除
+nano src/main.py
+# 削除：st.page_link("pages/01_example_app.py", label="Go to Example App", icon="🚀")
+```
+
+- 03-2．例）`src/pages/11_csv_viewer.py`を作成
   - `task start`・`task check-format`などで確認
 ```py
 import streamlit as st
@@ -103,6 +118,24 @@ def csv_viewer():
 csv_viewer()
 ```
 
+- 03-3．`tests/`フォルダにテストコード追加
+  * 例）`tests/test_pages_csv_viewer.py`を作成
+```py
+# test_pages_csv_viewer.py
+import sys
+import os
+from streamlit.testing.v1 import AppTest
+
+# srcディレクトリをモジュール検索パスに追加
+sys.path.append(os.path.join(os.path.dirname(__file__), '../src'))
+
+def test_show_title():
+    """show title"""
+    at = AppTest.from_file("src/pages/11_csv_viewer.py")
+    at.run(timeout=30)  # タイムアウトを30秒に設定
+    # print(f"at is {at}")
+    assert at.title[0].value == "CSVファイルアップローダー"
+```
 
 ## 使用ライブラリ
 
