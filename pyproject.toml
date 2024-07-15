@@ -3,7 +3,7 @@ name = "stpyapp-template"
 version = "0.1.0"
 description = "streamlit project template for quick start"
 authors = ["Shogo Ogami <sg.tao.so@gmail.com>"]
-license = "Apache-2.0"
+license = "MIT License"
 readme = "README.md"
 
 [tool.poetry.dependencies]

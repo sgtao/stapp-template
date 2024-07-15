@@ -3,6 +3,7 @@
 
 ## コンテンツ
 - サンプルコード（[streamlit-example](https://github.com/streamlit/streamlit-example)）を追加
+- [PythonVtuber動画](https://www.youtube.com/watch?v=4nsTce1Oce8)のアプリを作ってみる
 
 ## Usage
 - [poetry cli](https://cocoatomo.github.io/poetry-ja/cli/)を利用する
@@ -77,31 +78,32 @@ cd  $PROJECT_FOLDER
 # git remote add origin $GITHUB_URL
 git remote set-url origin $GITHUB_URL
 git branch -M main
+# GitHub二リポジトリを作成したあとに`git-push`実施
 git push -u origin main
 ```
 
-### 02．`README.md`・`LICENSE`ファイルの変更
+### 02．`pyproject.toml`の変更
+- `pyproject.toml`ファイルの`[tool.poetry]`グループを変更する
+```toml
+[tool.poetry]
+- name = "stpyapp-template"
++ name = "csv_viewer"
+version = "0.1.0"
+- description = "streamlit project template for quick start"
+- authors = ["Shogo Ogami <sg.tao.so@gmail.com>"]
+- license = "Apache-2.0"
++ description = "CSV fileviewer" # 必要に応じて
++ authors = ["YYYY ZZZ <yyyy.zzz@gmail.com>"]
++ license = "MIT License" # 必要に応じて
+```
+
+### 03．`README.md`・`LICENSE`ファイルの変更
 - `README.md`の変更：
   - タイトル、概要を変更する
   - LICENSEを変更する場合は、`README.md`の下段の表記と`LICENSE`ファイルを変更する
 
-### 03．`src/pages`フォルダ配下のページ更新
-- 03-1．テンプレートのファイルを削除
-```sh
-rm src/pages/01_example_app.py
-rm src/components/spiral_chart.py src/functions/calculations.py
-rm tests/test_pages_example_app.py
-#
-# 必要に応じてパッケージも削除
-poetry remove altair
-poetry remove pandas
-#
-# `src/main.py`のリンク削除
-nano src/main.py
-# 削除：st.page_link("pages/01_example_app.py", label="Go to Example App", icon="🚀")
-```
-
-- 03-2．例）`src/pages/11_csv_viewer.py`を作成
+### 04．`src/pages`フォルダ配下などのページ更新
+#### 04-1．例）`src/pages/11_csv_viewer.py`を作成
   - `task start`・`task check-format`などで確認
 ```py
 import streamlit as st
@@ -118,8 +120,8 @@ def csv_viewer():
 csv_viewer()
 ```
 
-- 03-3．`tests/`フォルダにテストコード追加
-  * 例）`tests/test_pages_csv_viewer.py`を作成
+#### 04-2．`tests/`フォルダにテストコード追加
+- 例）`tests/test_pages_csv_viewer.py`を作成
 ```py
 # test_pages_csv_viewer.py
 import sys
@@ -137,6 +139,22 @@ def test_show_title():
     assert at.title[0].value == "CSVファイルアップローダー"
 ```
 
+### 05．テンプレートのファイルを削除
+```sh
+rm src/pages/01_example_app.py
+rm src/components/spiral_chart.py src/functions/calculations.py
+rm tests/test_pages_example_app.py
+#
+# 必要に応じてパッケージも削除
+poetry remove altair
+poetry remove pandas
+#
+# `src/main.py`のリンク削除
+nano src/main.py
+# 削除：st.page_link("pages/01_example_app.py", label="Go to Example App", icon="🚀")
+```
+
+
 ## 使用ライブラリ
 
 このプロジェクトは以下のオープンソースライブラリを使用しています：
@@ -146,6 +164,7 @@ def test_show_title():
   Copyright © 2019-2024 Streamlit Inc.
 
   Streamlitは、データアプリケーションを簡単に作成するためのオープンソースライブラリです。
+
 
 ## ライセンス
 MIT License
