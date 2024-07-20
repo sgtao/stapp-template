@@ -3,7 +3,6 @@
 
 ## コンテンツ
 - サンプルコード（[streamlit-example](https://github.com/streamlit/streamlit-example)）を追加
-- [PythonVtuber動画](https://www.youtube.com/watch?v=4nsTce1Oce8)のアプリを作ってみる
 
 ## Usage
 - [poetry cli](https://cocoatomo.github.io/poetry-ja/cli/)を利用する
@@ -71,10 +70,10 @@ task test-repo
 ### 01. リポジトリURLの変更
 - `git-clone`したあと、`git-remote`でoriginを変更する
 ```sh
-PROJECT_FOLDER="stapp-excel2csv"
-GITHUB_URL="https://github.com/sgtao/${PROJECT_FOLDER}.git"
-git clone https://github.com/sgtao/stpyapp-template.git $PROJECT_FOLDER
-cd  $PROJECT_FOLDER
+PROJECT_NAME="stapp-excel2csv"
+GITHUB_URL="https://github.com/sgtao/${PROJECT_NAME}.git"
+git clone https://github.com/sgtao/stpyapp-template.git $PROJECT_NAME
+cd  $PROJECT_NAME
 # git remote add origin $GITHUB_URL
 git remote set-url origin $GITHUB_URL
 git branch -M main
