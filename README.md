@@ -3,6 +3,7 @@
 
 ## コンテンツ
 - サンプルコード（[streamlit-example](https://github.com/streamlit/streamlit-example)）を追加
+- [PythonVtuber動画](https://www.youtube.com/watch?v=4nsTce1Oce8)のアプリを作ってみる
 
 ## Usage
 - [poetry cli](https://cocoatomo.github.io/poetry-ja/cli/)を利用する
