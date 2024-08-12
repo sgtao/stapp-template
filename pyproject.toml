@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "stpyapp-template"
+name = "stapp-template"
 version = "0.1.0"
 description = "streamlit project template for quick start"
 authors = ["Shogo Ogami <sg.tao.so@gmail.com>"]

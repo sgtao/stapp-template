@@ -1,4 +1,4 @@
-# stpyapp-template
+# stapp-template
 [streamlit](https://streamlit.io/)のアプリ開発するためのテンプレートを作ってみる
 
 ## コンテンツ
@@ -72,7 +72,7 @@ task test-repo
 ```sh
 PROJECT_NAME="stapp-excel2csv"
 GITHUB_URL="https://github.com/sgtao/${PROJECT_NAME}.git"
-git clone https://github.com/sgtao/stpyapp-template.git $PROJECT_NAME
+git clone https://github.com/sgtao/stapp-template.git $PROJECT_NAME
 cd  $PROJECT_NAME
 # git remote add origin $GITHUB_URL
 git remote set-url origin $GITHUB_URL
@@ -85,7 +85,7 @@ git push -u origin main
 - `pyproject.toml`ファイルの`[tool.poetry]`グループを変更する
 ```toml
 [tool.poetry]
-- name = "stpyapp-template"
+- name = "stapp-template"
 + name = "csv_viewer"
 version = "0.1.0"
 - description = "streamlit project template for quick start"
