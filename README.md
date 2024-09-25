@@ -5,7 +5,7 @@
 - サンプルコード（[streamlit-example](https://github.com/streamlit/streamlit-example)）を追加
 
 ## Usage
-- [poetry cli](https://cocoatomo.github.io/poetry-ja/cli/)を利用する
+- [poetry cli](https://python-poetry.org/docs/)を利用する
 
 ### Setup
 ```sh
@@ -22,7 +22,7 @@ test-cov     pytest tests --cov --cov-branch -svx
 test-report  pytest tests --cov --cov-report=html
 format       black --line-length 79 src
 lint         flake8 src
-check-format black整形とflake8チェックを実行
+check-format run lint check after format
 ```
 
 ### Start as local service
@@ -62,9 +62,10 @@ task test-cov
 #### output HTML coverage report
 ```sh
 # on poetry shell
-task test-repo
+task test-report
 ```
 
+<details><summary>補足メモ</summary>
 
 ## 他プロジェクトでの利用手順例
 ### 01. リポジトリURLの変更
@@ -152,7 +153,7 @@ poetry remove pandas
 nano src/main.py
 # 削除：st.page_link("pages/01_example_app.py", label="Go to Example App", icon="🚀")
 ```
-
+</details>
 
 ## 使用ライブラリ
 
