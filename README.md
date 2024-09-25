@@ -19,7 +19,7 @@ $ task --list
 start        streamlit run src/main.py
 test         pytest tests
 test-cov     pytest tests --cov --cov-branch -svx
-test-repo    pytest tests --cov --cov-report=html
+test-report  pytest tests --cov --cov-report=html
 format       black --line-length 79 src
 lint         flake8 src
 check-format black整形とflake8チェックを実行
