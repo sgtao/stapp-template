@@ -14,15 +14,18 @@ poetry shell
 ```
 
 ### コマンド一覧
+- [pyproject.toml](./pyproject.toml) の `[tool.taskipy.tasks]` 定義より：
 ```sh
 $ task --list
-start        streamlit run src/main.py
-test         pytest tests
-test-cov     pytest tests --cov --cov-branch -svx
-test-report  pytest tests --cov --cov-report=html
-format       black --line-length 79 src
-lint         flake8 src
-check-format run lint check after format
+start               streamlit run src/main.py
+test                pytest tests
+test-cov            pytest tests --cov --cov-branch -svx
+test-report         pytest tests --cov --cov-report=html
+format              black --line-length 79 src
+lint                flake8 src
+check-format        run lint check after format
+export-requirements export requirements.txt file
+export-req-with-dev export requirements-dev.txt file
 ```
 
 ### Start as local service
@@ -64,6 +67,21 @@ task test-cov
 # on poetry shell
 task test-report
 ```
+
+### Export `requirements.txt` file
+
+- export `requirements.txt` file of only `[tool.poetry.dependencies]` packages
+```sh
+# on poetry shell
+task export-requirements
+```
+
+- export `requirements.txt` file of `[tool.poetry.dependencies]` and `[tool.poetry.group.dev.dependencies]` packages
+```sh
+# on poetry shell
+task export-req-with-dev
+```
+
 
 <details><summary>補足メモ</summary>
 

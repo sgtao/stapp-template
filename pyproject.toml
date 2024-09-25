@@ -32,3 +32,5 @@ test-report = "pytest tests --cov --cov-report=html"
 format = "black --line-length 79 src"
 lint = "flake8 src"
 check-format = { cmd = "task format && task lint", help = "run lint check after format" }
+export-requirements = { cmd = "poetry export -f requirements.txt -o requirements.txt --without-hashes", help = "export requirements.txt file" }
+export-req-with-dev = { cmd = "poetry export -f requirements.txt -o requirements-dev.txt --without-hashes --with dev", help = "export requirements-dev.txt file" }
