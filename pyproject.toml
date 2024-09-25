@@ -30,7 +30,9 @@ build-backend = "poetry.core.masonry.api"
 start = "streamlit run src/main.py"
 test = "pytest tests"
 test-cov = "pytest tests --cov --cov-branch -svx"
-test-repo = "pytest tests --cov --cov-report=html"
+test-report = "pytest tests --cov --cov-report=html"
 format = "black --line-length 79 src"
 lint = "flake8 src"
-check-format = { cmd = "task format && task lint", help = "black整形とflake8チェックを実行" }
+check-format = { cmd = "task format && task lint", help = "run lint check after format" }
+export-requirements = { cmd = "poetry export -f requirements.txt -o requirements.txt --without-hashes", help = "export requirements.txt file" }
+export-req-with-dev = { cmd = "poetry export -f requirements.txt -o requirements-dev.txt --without-hashes --with dev", help = "export requirements-dev.txt file" }

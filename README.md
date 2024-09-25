@@ -6,7 +6,7 @@
 - [PythonVtuber動画](https://www.youtube.com/watch?v=4nsTce1Oce8)のアプリを作ってみる
 
 ## Usage
-- [poetry cli](https://cocoatomo.github.io/poetry-ja/cli/)を利用する
+- [poetry cli](https://python-poetry.org/docs/)を利用する
 
 ### Setup
 ```sh
@@ -15,15 +15,18 @@ poetry shell
 ```
 
 ### コマンド一覧
+- [pyproject.toml](./pyproject.toml) の `[tool.taskipy.tasks]` 定義より：
 ```sh
 $ task --list
-start        streamlit run src/main.py
-test         pytest tests
-test-cov     pytest tests --cov --cov-branch -svx
-test-repo    pytest tests --cov --cov-report=html
-format       black --line-length 79 src
-lint         flake8 src
-check-format black整形とflake8チェックを実行
+start               streamlit run src/main.py
+test                pytest tests
+test-cov            pytest tests --cov --cov-branch -svx
+test-report         pytest tests --cov --cov-report=html
+format              black --line-length 79 src
+lint                flake8 src
+check-format        run lint check after format
+export-requirements export requirements.txt file
+export-req-with-dev export requirements-dev.txt file
 ```
 
 ### Start as local service
@@ -63,9 +66,25 @@ task test-cov
 #### output HTML coverage report
 ```sh
 # on poetry shell
-task test-repo
+task test-report
 ```
 
+### Export `requirements.txt` file
+
+- export `requirements.txt` file of only `[tool.poetry.dependencies]` packages
+```sh
+# on poetry shell
+task export-requirements
+```
+
+- export `requirements.txt` file of `[tool.poetry.dependencies]` and `[tool.poetry.group.dev.dependencies]` packages
+```sh
+# on poetry shell
+task export-req-with-dev
+```
+
+
+<details><summary>補足メモ</summary>
 
 ## 他プロジェクトでの利用手順例
 ### 01. リポジトリURLの変更
@@ -153,7 +172,7 @@ poetry remove pandas
 nano src/main.py
 # 削除：st.page_link("pages/01_example_app.py", label="Go to Example App", icon="🚀")
 ```
-
+</details>
 
 ## 使用ライブラリ
 
