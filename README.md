@@ -18,7 +18,7 @@ poetry shell
 - [pyproject.toml](./pyproject.toml) の `[tool.taskipy.tasks]` 定義より：
 ```sh
 $ task --list
-start               streamlit run src/main.py
+run                 streamlit run src/main.py
 test                pytest tests
 test-cov            pytest tests --cov --cov-branch -svx
 test-report         pytest tests --cov --cov-report=html
@@ -33,8 +33,8 @@ export-req-with-dev export requirements-dev.txt file
 ```sh
 # on poetry shell
 # streamlit hello
+task run
 # streamlit run src/main.py
-task start
 # Local URL: http://localhost:8501
 ```
 
@@ -123,7 +123,7 @@ version = "0.1.0"
 
 ### 04．`src/pages`フォルダ配下などのページ更新
 #### 04-1．例）`src/pages/11_csv_viewer.py`を作成
-  - `task start`・`task check-format`などで確認
+  - `task run`・`task check-format`などで確認
 ```py
 import streamlit as st
 import pandas as pd
