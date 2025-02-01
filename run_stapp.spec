@@ -1,13 +1,13 @@
 # -*- mode: python ; coding: utf-8 -*-
 from PyInstaller.utils.hooks import collect_data_files, collect_submodules
 
-# streamlit関連の依存関係を収集
+# collect streamlit dependencies
 streamlit_hidden_imports = collect_submodules("streamlit")
 streamlit_data = collect_data_files("streamlit")
 
 
 a = Analysis(
-    ['run_streamlit.py'],
+    ['run_stapp.py'],
     pathex=[],
     binaries=[],
     datas=[
@@ -51,7 +51,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='run_streamlit',
+    name='run_stapp',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -70,5 +70,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='run_streamlit',
+    name='run_stapp',
 )

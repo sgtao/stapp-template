@@ -1,4 +1,4 @@
-# run_streamlit.py
+# run_stapp.py
 import os
 import sys
 
