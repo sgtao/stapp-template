@@ -62,3 +62,5 @@ cover/
 # local settings
 00_references
 
+dist
+build
