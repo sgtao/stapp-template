@@ -26,6 +26,8 @@ lint                flake8 src
 check-format        run lint check after format
 export-requirements export requirements.txt file
 export-req-with-dev export requirements-dev.txt file
+rm-dist             remove build and dist directory
+make-dist           make distribution package
 ```
 
 ### Start as local service
@@ -80,6 +82,25 @@ task export-requirements
 ```sh
 # on poetry shell
 task export-req-with-dev
+```
+
+### make packages
+- make package file under dist for run stapp without Python
+```sh
+# make distribution package on poetry-shell
+task make-dist
+```
+
+- clear package
+```sh
+# remove distribution package on poetry-shell
+task rm-dist
+```
+
+- run package
+```sh
+# run package without poetry shell
+./dist/run_stapp/run_stapp
 ```
 
 
