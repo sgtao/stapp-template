@@ -84,6 +84,22 @@ task export-requirements
 task export-req-with-dev
 ```
 
+### Build Docker image and run
+```sh
+# Build Docker image
+sudo task docker-build
+
+# run docker container
+sudo task docker-run
+```
+
+#### priviredge setting:
+- to execute docker command without sudo, set following:
+```sh
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
 ### make packages
 - make package file under dist for run stapp without Python
 ```sh
