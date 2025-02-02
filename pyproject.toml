@@ -41,6 +41,10 @@ check-format = { cmd = "task format && task lint", help = "run lint check after 
 export-requirements = { cmd = "poetry export -f requirements.txt -o requirements.txt --without-hashes", help = "export requirements.txt file" }
 export-req-with-dev = { cmd = "poetry export -f requirements.txt -o requirements-dev.txt --without-hashes --with dev", help = "export requirements-dev.txt file" }
 
+# Docker commands
+docker-build = { cmd = "docker build -t my-stapp .", help = "build Docker image" }
+docker-run = { cmd = "docker run -p 8051:8051 my-stapp", help = "run Docker container" }
+
 # make distribution package
 rm-dist = { cmd = "rm -rf build dist", help = "remove build and dist directory" }
 build = { cmd = "pyinstaller run_stapp.spec --clean", help = "build distribution package" }
