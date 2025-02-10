@@ -124,12 +124,17 @@ task rm-dist
 
 ## 他プロジェクトでの利用手順例
 ### 01. リポジトリURLの変更
-- `git-clone`したあと、`git-remote`でoriginを変更する
+- `git-clone`したあと、`.git`ディレクトリを削除して、Gitコミットしてください
 ```sh
 PROJECT_NAME="stapp-excel2csv"
-GITHUB_URL="https://github.com/sgtao/${PROJECT_NAME}.git"
+GITHUB_URL="https://github.com/<User or Group>/${PROJECT_NAME}.git"
 git clone https://github.com/sgtao/stapp-template.git $PROJECT_NAME
 cd  $PROJECT_NAME
+# Gitの再コミット
+rm -rf .git
+git init
+git add -A
+git commit -m"initial commit"
 # git remote add origin $GITHUB_URL
 git remote set-url origin $GITHUB_URL
 git branch -M main
