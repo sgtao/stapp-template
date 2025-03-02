@@ -10,7 +10,13 @@
 ### Setup
 ```sh
 poetry install
-poetry shell
+
+# start poetry virtual env.
+# poetry shell # for poetry 1.x version
+eval $(poetry env activate) # for poetry 2.x version
+
+# when finish poetry virtual env.
+deactivate
 ```
 
 ### コマンド一覧
@@ -32,7 +38,7 @@ make-dist           make distribution package
 
 ### Start as local service
 ```sh
-# on poetry shell
+# on poetry env.
 # streamlit hello
 task run
 # streamlit run src/main.py
@@ -51,7 +57,7 @@ task check-format
 ### Test with `pytest`
 - [streamlitのテスト手法](https://docs.streamlit.io/develop/concepts/app-testing/get-started)を参考にテストを実施
 ```sh
-# on poetry shell
+# on poetry env
 # pytest tests/test_main.py
 task test
 ```
@@ -60,13 +66,13 @@ task test
 
 #### show c1 coverage
 ```sh
-# on poetry shell
+# on poetry env
 task test-cov
 ```
 
 #### output HTML coverage report
 ```sh
-# on poetry shell
+# on poetry env
 task test-report
 ```
 
@@ -74,13 +80,13 @@ task test-report
 
 - export `requirements.txt` file of only `[tool.poetry.dependencies]` packages
 ```sh
-# on poetry shell
+# on poetry env
 task export-requirements
 ```
 
 - export `requirements.txt` file of `[tool.poetry.dependencies]` and `[tool.poetry.group.dev.dependencies]` packages
 ```sh
-# on poetry shell
+# on poetry env
 task export-req-with-dev
 ```
 
@@ -103,19 +109,19 @@ newgrp docker
 ### make packages
 - make package file under dist for run stapp without Python
 ```sh
-# make distribution package on poetry-shell
+# make distribution package on poetry env
 task make-dist
 ```
 
 - clear package
 ```sh
-# remove distribution package on poetry-shell
+# remove distribution package on poetry env
 task rm-dist
 ```
 
 - run package
 ```sh
-# run package without poetry shell
+# run package without poetry env
 ./dist/run_stapp/run_stapp
 ```
 
