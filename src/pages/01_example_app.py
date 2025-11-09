@@ -1,8 +1,8 @@
 # 01_example_app.py
 import streamlit as st
 
-from functions.calculations import calculate_spiral
-from components.spiral_chart import spiral_chart
+from logic.calculations import calculate_spiral
+from ui.spiral_chart import spiral_chart
 
 # # メインページに移動
 st.page_link("main.py", label="Go to Main", icon="🏠")

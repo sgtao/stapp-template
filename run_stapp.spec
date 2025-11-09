@@ -17,16 +17,16 @@ a = Analysis(
     binaries=[],  # 必要なバイナリファイル（DLLなど）
     datas=[ # データファイルとその配置先を指定
         ("src/pages", "pages"),
-        ("src/components", "components"),
-        ("src/functions", "functions"),
+        ("src/ui", "ui"),
+        ("src/logic", "logic"),
         ("src/main.py", "."),  # メインスクリプト
     ]
     + streamlit_data,  # Streamlitのデータファイルを追加
     hiddenimports=[ # 明示的にインポートが必要なモジュールを指定
         "streamlit",
         "streamlit.web.cli",
-        "src.components.spiral_chart",
-        "src.functions.calculations",
+        "src.ui.spiral_chart",
+        "src.logic.calculations",
         # 以下は、Streamlitの依存パッケージ
         "altair",
         "pandas",
