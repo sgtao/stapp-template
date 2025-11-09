@@ -5,7 +5,7 @@ from functions.calculations import calculate_spiral
 from components.spiral_chart import spiral_chart
 
 # # メインページに移動
-# st.page_link("main.py", label="Go to Main", icon="🏠")
+st.page_link("main.py", label="Go to Main", icon="🏠")
 
 st.title("Streamlit Example App")
 
